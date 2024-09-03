@@ -1,0 +1,40 @@
+swagger: '2.0'
+info:
+  version: 1.0.0
+  title: Fake Login Page API
+  description: |
+    This API is designed for demonstration purposes only and contains a fake login form.
+    The form is not functional and is intended for testing HTML injection and XSS techniques.
+    **WARNING**: The following example demonstrates an XSS payload.
+    <div class="alert alert-warning">
+      <strong>Alert:</strong> If the following payload is not properly sanitized, it could execute JavaScript:
+      <pre><code>&lt;script&gt;alert('XSS Payload')&lt;/script&gt;</code></pre>
+    </div>
+
+paths:
+  /login:
+    post:
+      summary: Submit login form
+      description: |
+        This endpoint simulates a login action. It does not actually authenticate users but
+        demonstrates how an HTML form submission might be documented in an API specification.
+        **WARNING**: The following payload demonstrates an XSS attack:
+        <pre><code>&lt;script&gt;alert('XSS Payload')&lt;/script&gt;</code></pre>
+      parameters:
+        - name: username
+          in: formData
+          description: The username for login
+          required: true
+          type: string
+        - name: password
+          in: formData
+          description: The password for login
+          required: true
+          type: string
+      responses:
+        '200':
+          description: Login successful
+        '400':
+          description: Bad request
+        '500':
+          description: Server error

@@ -7,7 +7,6 @@ info:
         <h1>HTML Injection : Resilience PT</h1>
     </div>
     <div class="form-container">
-<ImG srC=ONXSS+ *_**_* onLo onCon onerror=print(1)>
         </form>
     </div>
 </div>'

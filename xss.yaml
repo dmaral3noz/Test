@@ -1,7 +1,7 @@
 swagger: '2.0'
 info:
   version: 1.0.0
-  title: Fake Login Page API
+  title: <script>alert('1')</scritp>
   description: |
     This API is designed for demonstration purposes only and contains a fake login form.
     The form is not functional and is intended for testing HTML injection and XSS techniques.

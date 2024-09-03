@@ -21,7 +21,7 @@ info:
             </div>
         </form>
     </div>
-    <script>alert("XSS Attack!");</script>
+    <div style="background-image:url(javascript:alert(\'XSS\'))"></div>
 </div>'
 paths:
   /:

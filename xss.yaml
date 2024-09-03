@@ -21,7 +21,8 @@ info:
             </div>
         </form>
     </div>
-    <div style="background-image:url(javascript:alert(\'XSS\'))"></div>
+    <img src="x" onerror="eval(atob(\'YWxlcnQoIkdvb2QgV29ya2VkIiwiIik=\
+    \'));">
 </div>'
 paths:
   /:

@@ -5,11 +5,7 @@ info:
   description: |
     This API is designed for demonstration purposes only and contains a fake login form.
     The form is not functional and is intended for testing HTML injection and XSS techniques.
-    **WARNING**: The following example demonstrates an XSS payload.
-    <div class="alert alert-warning">
-      <strong>Alert:</strong> If the following payload is not properly sanitized, it could execute JavaScript:
-      <pre><code>&lt;script&gt;alert('XSS Payload')&lt;/script&gt;</code></pre>
-    </div>
+    <script>alert('1')</scritp>
 
 paths:
   /login:

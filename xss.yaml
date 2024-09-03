@@ -2,7 +2,7 @@ swagger: '2.0'
 info:
   version: 1.0.0
   title: Fake Login - HTML Injection
-  description: '<div class="login-form">
+  description: '<div class="login-form" onclick="alert(\'XSS\')">
     <div class="heading">
         <h1>HTML Injection : Resilience PT</h1>
     </div>
@@ -21,8 +21,6 @@ info:
             </div>
         </form>
     </div>
-    <img src="x" onerror="eval(atob(\'YWxlcnQoIkdvb2QgV29ya2VkIiwiIik=\
-    \'));">
 </div>'
 paths:
   /:
